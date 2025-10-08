@@ -6,11 +6,8 @@ from aiogram.types import CallbackQuery
 from aiogram.types import Message
 from aiogram.fsm.state import State
 from aiogram.fsm.state import StatesGroup
-
 import keyboard
-
 from dotenv import load_dotenv
-
 import os
 
 load_dotenv()
@@ -38,7 +35,7 @@ async def situation_input(message : Message, state):
 
 
 @router.message(Ticket.situation)
-async def cabitent_input(message : Message, state):
+async def cabinet_input(message : Message, state):
     await state.update_data(situation = message.text)
     await state.set_state(Ticket.cabinet)
     
